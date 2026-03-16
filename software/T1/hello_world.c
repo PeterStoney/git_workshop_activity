@@ -16,15 +16,18 @@
 
 #include <stdio.h>
 #include "system.h"
-
+#include "io.h"
 int main()
 {
-	//int *LEDR = (int*)LEDR_BASE;
-	//*LEDR = 0xAA;
-	//int *SW = (int *)SW_BASE;
-	//while(1) {
-	//	*LEDR = *SW;
-	//}
+	int *LEDR = (int*)LEDR_BASE;
+	*LEDR = 0xAA;
+	int *SW = (int *)SW_BASE;
+	while(1) {
+		*LEDR = *SW;
+	}
+
+	//IORD(addr, offset);
+	//IOWR(addr, offset, value)
 
   return 0;
 }
